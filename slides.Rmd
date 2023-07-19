@@ -1,5 +1,5 @@
 ---
-title: "Generación de Proyectos en R Studio"
+title: "Generación de Proyectos en RStudio"
 subtitle: "RLadies Cuernavaca"
 author: "Joselyn Cristina Chávez Fuentes"
 date: "27/07/2023"
