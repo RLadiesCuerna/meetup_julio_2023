@@ -18,7 +18,9 @@ Jueves 27 de julio de 2023
 
 - [Dra. Joselyn Chávez](https://josschavezf.github.io/)
 
-Joselyn es Doctora en Ciencias Bioquímicas y actualmente se encuentra realizando una estancia postdoctoral en el Departamento de Genética y Genómica de la escuela de Medicina Icahn de Monte Sinaí, en la ciudad de Nueva York. Su principal interés es la bioinformática y el desarrollo de software para análisis de datos transcriptómicos espaciales de célula única. Además de su proyecto de investigación, Joselyn disfruta dar clases de R y participar en actividades que ayudan a expandir la comunidad de desarrolladores de software en latinoamérica.
+Joselyn es Doctora en Ciencias Bioquímicas y actualmente se encuentra realizando una estancia postdoctoral en el Departamento de Genética y Genómica de la escuela de Medicina Icahn de Monte Sinaí, en la ciudad de Nueva York. 
+
+Su principal interés es la bioinformática y el desarrollo de software para análisis de datos transcriptómicos espaciales de célula única. Además de su proyecto de investigación, Joselyn disfruta dar clases de R y participar en actividades que ayudan a expandir la comunidad de desarrolladores de software en latinoamérica.
 
 
 ## Materiales
