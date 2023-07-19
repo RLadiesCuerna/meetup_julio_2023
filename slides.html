@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Generación de Proyectos en R Studio</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Joselyn Cristina Chávez Fuentes" />
+    <script src="slides_files/header-attrs-2.22/header-attrs.js"></script>
+    <script src="slides_files/clipboard-2.0.6/clipboard.min.js"></script>
+    <link href="slides_files/xaringanExtra-clipboard-0.2.6/xaringanExtra-clipboard.css" rel="stylesheet" />
+    <script src="slides_files/xaringanExtra-clipboard-0.2.6/xaringanExtra-clipboard.js"></script>
+    <script>window.xaringanExtraClipboard(null, {"button":"Copy Code","success":"Copied!","error":"Press Ctrl+C to Copy"})</script>
+    <link rel="stylesheet" href="rladies.css" type="text/css" />
+    <link rel="stylesheet" href="rladies-fonts.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# Generación de Proyectos en R Studio
+]
+.subtitle[
+## RLadies Cuernavaca
+]
+.author[
+### Joselyn Cristina Chávez Fuentes
+]
+.date[
+### 27/07/2023
+]
+
+---
+
+
+
+
+class: middle, center
+
+## Este material posee una licencia tipo Creative Commons Attribution-ShareAlike 4.0 International License. 
+## Para conocer más sobre esta licencia, visite http://creativecommons.org/licenses/by-sa/4.0/
+
+---
+class: middle, center
+
+## Material disponible en: 
+### https://github.com/RLadiesCuerna/meetup_julio_2023
+
+## Basado en el RStudioConf2020 workshop &lt;br&gt; What They Forgot, disponible en: 
+### https://rstd.io/wtf-2020-rsc
+
+---
+# ¿Qué es un proyecto de RStudio?
+
+- Es un archivo especial de R, compatible con RStudio, que al ejecutarlo hará 3 cosas:
+
+  - Abrirá una nueva sesión de RStudio.
+  
+  - Establecerá la ubicación del proyecto como tu directorio de trabajo.
+  
+  - Establecerá la ubicación del proyecto como la raíz de los archivos.
+
+---
+# ¿Cómo generamos un proyecto de RStudio?
+
+## Opción 1:
+
+- Creando un proyecto en un directorio nuevo:
+
+  - En las opciones de RStudio Ve a File &gt; New project &gt; New Directory &gt; New Project.
+  - Asigna un nombre a tu proyecto, sin espacios y sin caracteres especiales.
+  - Selecciona la ubicación donde crearás el nuevo directorio.
+  - Selecciona la opción Open in New Session.
+  - Oprime Create Project.
+
+---
+# ¡Es tu turno! 
+
+- Genera un proyecto de RStudio llamado ‘proyecto1’ en un directorio nuevo en tus Documentos (~/Documentos).
+
+---
+## Opción 2:
+
+- Creando un proyecto en un directorio existente:
+  
+  - Crea un directorio en alguna ubicación conocida de tu computadora.
+  - Asigna un nombre a tu directorio, sin espacios y sin caracteres especiales (Este será el nombre de tu proyecto).
+  - En las opciones de RStudio ve a File &gt; New project &gt; Existing Directory.
+  - Selecciona la ubicación donde previamente creaste el directorio.
+  - Selecciona la opción Open in New Session.
+  - Oprime Create Project.
+
+---
+# ¡Es tu turno! 
+
+- Genera una carpeta o directorio llamado ‘proyecto2’ en tus Documentos (~/Documentos), después genera un proyecto de RStudio usando este folder como base.
+
+---
+# ¿Por qué usar proyectos de RStudio?
+
+## Para tener un espacio organizado
+
+.pull-left[
+&lt;img src="img/salad.png" width="90%" /&gt;
+]
+
+.pull-right[
+&lt;img src="img/filesorder.png" width="100%" /&gt;
+]
+
+---
+# ¿Por qué usar proyectos de RStudio?
+
+.pull-left[&lt;br&gt;
+## Compartamentalizas tu trabajo. 
+
+## Puedes tener un proyecto por análisis.
+]
+
+.pull-right[
+&lt;img src="img/multiproyectos.png" width="90%" /&gt;
+]
+---
+# ¿Por qué usar proyectos de RStudio?
+
+## Puedes trabajar con varios proyectos a la vez.
+
+&lt;img src="img/multisesion.png" width="90%" /&gt;
+
+---
+# ¿Por qué usar proyectos de RStudio?
+
+## Establece automáticamente tu directorio de trabajo.
+
+### Sin proyecto de RStudio
+
+
+```r
+setwd("~/Documentos/proyecto")
+```
+
+---
+### Con proyecto de RStudio
+
+### Opción 1:
+
+- Ve a File &gt; Open Project o a  
+File &gt; Open Project in New Session.
+
+- Selecciona ~/Documentos/proyecto.Rproj.
+
+### Opción 2:
+
+- Si estás en tu terminal puedes usar:  
+open ~/Documentos/proyecto.Rproj
+
+---
+# ¿Por qué usar proyectos de RStudio?
+
+## Puedes usar rutas relativas a los archivos.
+
+### Sin proyecto de RStudio
+
+
+```r
+read.csv("~/Documents/meetup_julio_2023/mitabla.csv")
+```
+
+```
+##   x y
+## 1 a 1
+## 2 b 2
+## 3 c 3
+```
+
+---
+### Con proyecto de RStudio
+
+
+```r
+read.csv("mitabla.csv")
+```
+
+```
+##   x y
+## 1 a 1
+## 2 b 2
+## 3 c 3
+```
+
+---
+# ¿Por qué usar proyectos de RStudio?
+
+## Facilita el compartir y reproducir tu trabajo
+
+### Sin proyecto de RStudio
+
+Esta ruta funcionará solamente en mi computadora.
+
+
+```r
+read.csv("~/Documents/meetup_julio_2023/mitabla.csv")
+```
+
+---
+### Con proyecto de RStudio
+
+Esta ruta funcionará en cualquier computadora que tenga el directorio completo del proyecto.
+
+
+```r
+read.csv("mitabla.csv")
+```
+
+---
+# ¿Por qué usar proyectos de RStudio?
+
+## Nos ayuda a establecer colaboraciones y trabajar con plataformas de control de versiones.
+
+.pull-left[&lt;br&gt;
+&lt;img src="img/GitHubLogo.png" width="100%" /&gt;
+]
+
+.pull-right[
+&lt;img src="img/gitlablogo.jpg" width="80%" /&gt;
+]
+
+---
+# ¡Es tu turno! 
+
+Comprueba algunas ventajas de usar proyectos de RStudio.
+
+- Genera un nuevo proyecto de RStudio llamado ‘proyecto3’, recuerda que existen varias formas para hacerlo.
+
+- Cierra la sesión y vuelve a abrirla ejecutando desde la terminal open proyecto_3.Rproj o dando doble click sobre el archivo proyecto3.Rproj.
+
+- Evalúa tu directorio de trabajo ejecutando en la consola de RStudio el comando getwd().
+
+---
+
+- Cierra la sesión y mueve toda la carpeta de tu proyecto a otra ubicación. Si lo creaste en Documentos mueve la carpeta al Escritorio o viceversa.
+
+- Abre nuevamente el proyecto y verifica el directorio de trabajo, ¿Cambió el directorio de trabajo?
+
+- Sin cerrar este proyecto, abre alguno de los proyectos que generaste previamente (por ejemplo proyecto2.Rproj), recuerda que puedes seleccionar Open Project in New session
+
+---
+# Buenas práticas para ordenar tu proyecto
+
+.pull-left[
+Genera carpetas con:
+
+- Entradas (datos originales y datos filtrados).
+
+- Procedimientos (Rscripts con el filtrado, manejo de datos, análisis, generación de gráficas).
+
+- Salidas (Gráficas generadas y resultados).
+]
+
+.pull-right[
+&lt;img src="img/proyecto1.png" width="65%" /&gt;
+]
+
+---
+# ¡Es tu turno! 
+
+- Descarga la carpeta 'proyecto_desordenado' desde https://github.com/RLadiesCuerna/meetup_julio_2023 y ordena los archivos en subcarpetas, considera las recomendaciones mencionadas anteriormente.
+
+---
+# Utiliza las rutas adecuadas a los archivos
+
+Ahora que has reorganizado tu proyecto, debes usar las rutas relativas para importar y exportar tus archivos.
+
+Por ejemplo:
+
+```r
+read.table("datos/mis_datos.txt", header = TRUE)
+```
+
+.pull-left[
+Recuerda que la raiz de tu proyecto será el directorio principal.
+]
+
+.pull-right[
+&lt;img src="img/rutas.png" width="60%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+# ¡Es tu turno! 
+
+- Con tu proyecto ordenado, abre el archivo analisis.R y corrige las rutas a los archivos considerando los subdirectorios que creaste.
+
+- ¡Mejora aún más tu proyecto! Secciona tu código y crea nuevos scripts con cada una de las secciones que detectes en el análisis.
+
+
+---
+# Compartiendo tus proyectos
+
+Una de las ventajas de usar proyectos de RStudio es facilitar la colaboración con otras personas, así como compartir tu código de manera reproducible.
+
+Lo más común es utilizar control de versiones, por ejemplo en GitHub o GitLab. Pero comencemos compartiendo nuestro proyecto mediante Drive. 
+
+&lt;img src="img/colaboracion.png" width="28%" style="display: block; margin: auto 0 auto auto;" /&gt;
+
+---
+# ¡Es tu turno! 
+
+Genera un proyecto en tu computadora que contenga lo siguiente:
+
+- Un Rscript o Rmd con un pequeño análisis usando datos públicos de R, puedes palmperpinguins, gapminder, o el paquete datos.
+
+- Genera al menos un archivo de salida, por ejemplo una gráfica, una tabla, un archivo de texto o un html relacionado con tu análisis.
+
+- Crea los subdirectorios necesarios para ordenar tu proyecto y verifica que tu Rscript o Rmd contenga las rutas necesarias para leer o escribir estos archivos en las subcarpetas.
+
+---
+
+- ¡Intercambien proyectos! Carga tu proyecto completo en el Drive https://drive.google.com/drive/folders/1SaHgEESvcYDY1VUxUueyq2HA6XDuvse_?usp=share_link. 
+
+- Pídele a tu compañera/o que lo descargue y compruebe que puede ejecutar el análisis en su computadora.
+
+---
+# ¡Algunos hacks!
+
+.pull-left[
+### RStudio recuerda los proyectos con los que has trabajado recientemente.
+
+Ve a la esquina superior derecha y da click en la flecha junto al nombre de tu proyecto actual.
+
+Verás todos los proyectos recientes. 
+]
+
+.pull-right[
+&lt;img src="img/listprojects.png" width="85%" /&gt;
+]
+
+---
+# ¡Algunos hacks!
+
+Crea todos tus proyectos dentro de una carpeta principal y usa el buscador de archivos para acceder a ellos rápidamente.
+
+.pull-left[
+&lt;img src="img/misproyectos.png" width="60%" style="display: block; margin: auto;" /&gt;
+]
+
+.pull-right[
+&lt;img src="img/resultadomisproyectos.png" width="100%" /&gt;
+]
+
+---
+
+.pull-left[&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+.center[
+# ¡Gracias!
+]
+]
+
+.pull-right[&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;img src="img/gracias.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+.pull-right[Ilustración de Allison Horst]
+]
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"ratio": "16:9",
+"self-contained": true
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
